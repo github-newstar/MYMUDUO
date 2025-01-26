@@ -6,7 +6,7 @@ Logger* Logger::instance(){
     return &logger;
 }
 // 设置日志等级
-void Logger::setloglevel(int level){
+void Logger::setLogLevel(int level){
     logLevel_ = level;
 }
 // 写日志

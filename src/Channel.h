@@ -16,27 +16,28 @@ class Channel : noncopyable
     public:
     using EventCallback = std::function<void()>;
     using ReadEventCallback = std::function<void(TimeStamp)>;
-    Channel(EventLoop* Loop, int fd);
+    Channel(EventLoop *Loop, int fd);
     ~Channel();
-    
-    void handleEvent(TimeStamp receiveTime);    //fd得到poller通知后，处理事件
 
-    //设置回调函数对象
-    void setReadCallback(ReadEventCallback cb){ readCallback_ = std::move(cb);}
-    void setWriteCallback(EventCallback cb){ writeCallback_ = std::move(cb);}
-    void setCloseCallback(EventCallback cb){ closeCallback_ = std::move(cb);}
-    void setErrorCallback(EventCallback cb){ errorCallback_ = std::move(cb);}
-    
-    EventLoop* ownerLoop() { return loop_;}
+    void handleEvent(TimeStamp receiveTime); // fd得到poller通知后，处理事件
+
+    // 设置回调函数对象
+    void setReadCallback(ReadEventCallback cb) {
+        readCallback_ = std::move(cb);
+    }
+    void setWriteCallback(EventCallback cb) { writeCallback_ = std::move(cb); }
+    void setCloseCallback(EventCallback cb) { closeCallback_ = std::move(cb); }
+    void setErrorCallback(EventCallback cb) { errorCallback_ = std::move(cb); }
+
+    EventLoop *ownerLoop() { return loop_; }
     void remove();
-    
-    
+
     //防止channel被remove掉后，channel还在执行回调操作
     void tie(const std::shared_ptr<void>&);
 
     int fd() const { return fd_;}
     int events() const {return events_;}
-    int set_revents(int revt) {revents_ = revt;}
+    void set_revents(int revt) {revents_ = revt;}
     bool isNoneEvents() const {return events_ == kNoneEvent;}
     
     //设置fd相应的事件
