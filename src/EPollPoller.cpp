@@ -36,7 +36,7 @@ EPollPoller::~EPollPoller(){
      if(numEvents > 0){
         LOG_INFO("%d events happend \n", numEvents);
         fillActiveChanels(numEvents, activeChannels);
-        if(numEvents == events_.size()){
+        if(numEvents == static_cast<int>(events_.size())){
             events_.resize(2 * events_.size());
         }
         else if(numEvents == 0){

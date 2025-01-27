@@ -1,3 +1,4 @@
 .cache/
 build
 ./lib/
+/lib/libmymuduo.so

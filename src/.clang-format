@@ -2,27 +2,4 @@ BasedOnStyle: Google
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
-AllowShortFunctionsOnASingleLine: true
-BraceWrapping:
-  AfterFunction: false
-  AfterControlStatement: false
-  BeforeCatch: false
-  BeforeElse: false
-  AfterClass: true
-  AfterNamespace: true
-  AfterStruct: true
-  AfterUnion: true
-  AfterEnum: true
-  BeforeWhile: true
-  AfterWhile: true
-  AfterTemplate: true
-  AfterMethod: true
-AccessModifierOffset: 0
-AccessModifierAlignment: None
-PointerAlignment: Left
-SpaceAfterCStyleCast: true
-SpaceBeforeParens: ControlStatements
-SpaceInEmptyParentheses: false
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
-ConstructorInitializerIndentWidth: 4
-ColumnLimit: 0
+

@@ -11,8 +11,8 @@ bool Poller::hasChannel(Channel *channel) const {
     return it != channels_.end() && it->second == channel;
 }
 
-Poller* Poller::newDefaultPoller(EventLoop *loop) {
-    // TODO: 返回默认的IO复用实现
-    return nullptr;
-}
+// Poller* Poller::newDefaultPoller(EventLoop *loop) {
+//     // TODO: 返回默认的IO复用实现
+//     return nullptr;
+// }
 

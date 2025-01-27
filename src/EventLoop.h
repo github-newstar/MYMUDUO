@@ -32,7 +32,7 @@ public:
   void queueInLoop(Functor cb);
   
   //唤醒loop 所在的线程
-  void weakup();
+  void wakeup();
   
   //eventLoop的方法 =>   poller的方法
   void updateChannel(Channel* channel);
