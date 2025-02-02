@@ -24,7 +24,7 @@ Channel::~Channel()
 }
 
 
-// TODO: 何时调用channel的tie方法
+// TODO: 何时调用channel的tie方法 一个TcpConnection创建的时候
 void Channel::tie(const std::shared_ptr<void>& obj)
 {
     tie_ = obj;
